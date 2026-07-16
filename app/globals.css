@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+/* ==== WARFLY Hero Animations ==== */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes floatSparkle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.hero-bg-animate {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+.hero-fade-in {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.hero-neon-text {
+  text-shadow:
+    0 0 6px rgba(192, 132, 252, 0.35),
+    0 0 12px rgba(192, 132, 252, 0.2);
+}
+
+.hero-sparkle {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(244,114,182,0.9) 0%, rgba(192,132,252,0) 70%);
+  animation: floatSparkle 6s ease-in infinite;
+  pointer-events: none;
+}
